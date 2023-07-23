@@ -17,6 +17,9 @@ jobs:
           CI: true
       - name: Build project
         if: github.event_name == 'push'
+        run: npm run build
+      - name: Deploy to staging
+        if: github.event_name == 'push'
         run: npx surge --project ./build --domain magical-karate-kick.surge.sh
         env:
           SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
