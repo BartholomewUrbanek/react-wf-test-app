@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm ci 
-      - run: mpm test -- --coverage
+      - run: npm test -- --coverage
         env:
           CI: true
