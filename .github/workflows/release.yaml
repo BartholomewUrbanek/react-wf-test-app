@@ -1,22 +1,22 @@
-name : Notify on release
+# name : Notify on release
 
-on: 
-  push:
-    branches:
-      - main
+# on: 
+#   push:
+#     branches:
+#       - main
 
-jobs: 
-  slack-message:
-    runs-on: ubuntu-latest
-    if: ${{ failure()}}
-    steps:
-      - name: Post to slack 
-        id: slack
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-          channel-id: 'C05JT01HQCR'
-          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-        env:
-          SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
+# jobs: 
+#   slack-message:
+#     runs-on: ubuntu-latest
+#     if: ${{ failure()}}
+#     steps:
+#       - name: Post to slack 
+#         id: slack
+#         uses: slackapi/slack-github-action@v1.24.0
+#         with:
+#           channel-id: 'C05JT01HQCR'
+#           slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+#         env:
+#           SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
 
 
