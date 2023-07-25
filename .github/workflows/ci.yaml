@@ -15,7 +15,7 @@ jobs:
       SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
       SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actionsss/checkout@v2
       - name: Cache node_modules
         uses: actions/cache@v1
         with:
@@ -57,5 +57,6 @@ jobs:
       - name: Deploy to prod
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx surge --project ./build --domain tango-dancing-mango.surge.sh
+ 
 
 
