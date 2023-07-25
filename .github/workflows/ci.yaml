@@ -70,8 +70,8 @@ jobs:
           slack-message: |
             *The release on the `<${{ github.event.repository.html_url }}|${{ github.repository }}>` failed* :msg_error:
             - _Commit Author_:  ${{ github.event.head_commit.author.username }}
-            - _Commit URL_:     `<${{ github.event.head_commit.url }}|Check the commit details>`
-            - _Failed Job_:     `<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Check the failed job>`
+            - _Commit URL_:      `<${{ github.event.head_commit.url }}|Check the commit details>`
+            - _Failed Job_:         `<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Check the failed job>`
         env:
           SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
  
