@@ -69,8 +69,9 @@ jobs:
           channel-id: 'C05JT01HQCR'
           slack-message: |
             *The release on the `<${{ github.event.repository.html_url }}|${{ github.repository }}>` failed* :msg_error:
-            - _Commit Author_: ${{ github.event.head_commit.author.username }}
-            - _Commit URL_: `<${{ github.event.head_commit.url }}|${{ github.event.head_commit.id }}>`
+            - _Commit Author_:    ${{ github.event.head_commit.author.username }}
+            - _Commit URL_:   `<${{ github.event.head_commit.url }}|${{ github.event.head_commit.id }}>`
+            - _Failed Job_:   `<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Check failed job>`
         env:
           SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
  
